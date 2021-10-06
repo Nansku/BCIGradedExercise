@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+//const port = 3000;
 
 const passport = require('passport');
 const BasicStrategy = require('passport-http').BasicStrategy;
@@ -21,6 +21,8 @@ app.use(express.json());
 
 let userDb = [];
 let postingDb = [];
+
+app.set('port', (process.env.PORT || 80));
 
 passport.use(new BasicStrategy(
     (username, password, done) => {
@@ -191,8 +193,8 @@ let serverInstance = null;
 
 module.exports = {
     start: function() {
-        serverInstance = app.listen(port, () => {
-            console.log(`Example app listening at http://localhost:${port}`)
+        serverInstance = app.listen(app.get('port'), () => {
+            console.log('Node app running on port:', app.get('port'));
         })
     },
     close: function() {
