@@ -15,9 +15,6 @@ const postingPatchSchema = require('./schemas/posting_patch_schema.json');
 const userSchema = require('./schemas/user_schema.json');
 
 app.use(express.json());
-/*app.use(express.urlencoded({ 
-    extended: true 
-}));*/
 
 let userDb = [];
 let postingDb = [];
