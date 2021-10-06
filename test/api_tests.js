@@ -5,7 +5,7 @@ chai.use(chaiHttp);
 const server = require('../server');
 const chaiJsonSchemaAjv = require('chai-json-schema-ajv');
 chai.use(chaiJsonSchemaAjv);
-const url = "http://localhost:3000";
+const url = "http://localhost:80";
 const userSchema = require('../schemas/user_schema.json');
 
 describe('API tests', function () {
@@ -142,6 +142,18 @@ describe('API tests', function () {
                 expect(res).to.have.status(200);
                 done();
             });
+        });
+    });
+
+    describe('GET /posting', function () {
+        it('should return the posting of given id', function(done) {
+            chai.request(url)
+            .get(`/posting/${postingId}`)
+            .end(function (err, res) {
+                expect(err).to.be.null;
+                expect(res).to.have.status(200);
+                done();
+            })
         });
     });
 

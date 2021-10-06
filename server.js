@@ -1,3 +1,6 @@
+// Students: Jenna Pennanen and Juho Laukka
+// TVT19SPO
+
 const express = require('express');
 const app = express();
 //const port = 3000;
@@ -94,7 +97,18 @@ app.get('/postings', (req, res) => {
         });
     }
 
-    res.send(postings);
+    res.status(200).send(postings);
+})
+
+app.get('/posting/:id', (req, res) => {
+    
+    if (postingDb.some(d => d.id === req.params.id)) {
+        var posting = postingDb.find(d => d.id === req.params.id);
+    } else {
+        return res.sendStatus(404);
+    }
+    
+    res.status(200).send(posting);
 })
 
 app.patch('/posting/:id', passport.authenticate('basic', { session: false }), (req, res) => {
