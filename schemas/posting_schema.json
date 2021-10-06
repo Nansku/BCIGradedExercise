@@ -1,0 +1,172 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "posting_schema",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "title": "Kettle",
+            "description": "A used kettle.",
+            "category": "Kitchenware",
+            "location": "Oulu",
+            "images": [
+                "https://cdn.pixabay.com/photo/2017/03/27/12/39/kettles-2178442_960_720.jpg"
+            ],
+            "price": 12.5,
+            "delivery": "shipping",
+            "contact": {
+                "name": "Matti Meikäläinen",
+                "phone": "050 123 4567"
+            }
+        }
+    ],
+    "required": [
+        "title",
+        "description",
+        "category",
+        "location",
+        "images",
+        "price",
+        "delivery",
+        "contact"
+    ],
+    "properties": {
+        "title": {
+            "$id": "#/properties/title",
+            "default": "",
+            "description": "An explanation about the purpose of this instance.",
+            "examples": [
+                "Kettle"
+            ],
+            "title": "The title schema",
+            "type": "string"
+        },
+        "description": {
+            "$id": "#/properties/description",
+            "type": "string",
+            "title": "The description schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "A used kettle."
+            ]
+        },
+        "category": {
+            "$id": "#/properties/category",
+            "type": "string",
+            "title": "The category schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Kitchenware"
+            ]
+        },
+        "location": {
+            "$id": "#/properties/location",
+            "type": "string",
+            "title": "The location schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Oulu"
+            ]
+        },
+        "images": {
+            "$id": "#/properties/images",
+            "default": [],
+            "description": "An explanation about the purpose of this instance.",
+            "examples": [
+                [
+                    "https://cdn.pixabay.com/photo/2017/03/27/12/39/kettles-2178442_960_720.jpg"
+                ]
+            ],
+            "maxItems": 4,
+            "title": "The images schema",
+            "type": "array",
+            
+            "items": {
+                "$id": "#/properties/images/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/images/items/anyOf/0",
+                        "default": "",
+                        "description": "An explanation about the purpose of this instance.",
+                        "examples": [
+                            "https://cdn.pixabay.com/photo/2017/03/27/12/39/kettles-2178442_960_720.jpg"
+                        ],
+                        "title": "The first anyOf schema",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "price": {
+            "$id": "#/properties/price",
+            "default": 0.0,
+            "description": "An explanation about the purpose of this instance.",
+            "examples": [
+                12.5
+            ],
+            "multipleOf": 0.1,
+            "title": "The price schema",
+            "type": "number"
+        },
+        "delivery": {
+            "$id": "#/properties/delivery",
+            "default": "",
+            "description": "An explanation about the purpose of this instance.",
+            "enum": [
+                "shipping",
+                "pickup"
+            ],
+            "examples": [
+                "shipping"
+            ],
+            "title": "The delivery schema",
+            "type": "string"
+        },
+        "contact": {
+            "$id": "#/properties/contact",
+            "default": {},
+            "description": "An explanation about the purpose of this instance.",
+            "examples": [
+                {
+                    "name": "Matti Meikäläinen",
+                    "phone": "050 123 4567"
+                }
+            ],
+            "required": [
+                "name",
+                "phone"
+            ],
+            "title": "The contact schema",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "$id": "#/properties/contact/properties/name",
+                    "type": "string",
+                    "title": "The name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Matti Meikäläinen"
+                    ]
+                },
+                "phone": {
+                    "$id": "#/properties/contact/properties/phone",
+                    "type": "string",
+                    "title": "The phone schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "050 123 4567"
+                    ]
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}

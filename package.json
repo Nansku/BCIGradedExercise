@@ -1,0 +1,33 @@
+{
+  "name": "bcigradedexercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n9peje00/BCIGradedExercise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n9peje00/BCIGradedExercise/issues"
+  },
+  "homepage": "https://github.com/n9peje00/BCIGradedExercise#readme",
+  "dependencies": {
+    "ajv": "^8.6.3",
+    "bcryptjs": "^2.4.3",
+    "chai-json-schema-ajv": "^5.2.4",
+    "express": "^4.17.1",
+    "passport": "^0.4.1",
+    "passport-http": "^0.3.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.2",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0"
+  }
+}

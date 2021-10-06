@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "user_schema",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "username": "string",
+            "email": "user@example.com",
+            "password": "pa$$word"
+        }
+    ],
+    "required": [
+        "username",
+        "email",
+        "password"
+    ],
+    "properties": {
+        "username": {
+            "$id": "#/properties/username",
+            "default": "",
+            "description": "An explanation about the purpose of this instance.",
+            "examples": [
+                "string"
+            ],
+            "title": "The username schema",
+            "minLength": 3,
+            "type": "string"
+        },
+        "email": {
+            "$id": "#/properties/email",
+            "default": "",
+            "description": "An explanation about the purpose of this instance.",
+            "examples": [
+                "user@example.com"
+            ],
+            "title": "The email schema",
+            "minLength": 6,
+            "type": "string"
+        },
+        "password": {
+            "$id": "#/properties/password",
+            "default": "",
+            "description": "An explanation about the purpose of this instance.",
+            "examples": [
+                "pa$$word"
+            ],
+            "minLength": 8,
+            "title": "The password schema",
+            "type": "string"
+        }
+    },
+    "additionalProperties": false
+}
