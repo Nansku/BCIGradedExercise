@@ -43,6 +43,10 @@ passport.use(new BasicStrategy(
 
 ////////////////////////////////
 
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
 app.post('/posting', passport.authenticate('basic', { session: false }), (req, res) => {
 
     const valid = ajv.validate(postingSchema, req.body);
